@@ -9,8 +9,8 @@
   --light: #f4f4fd;
   --modal-overlay: #2e2f42;
   --hero-img-back: #2e2f42;
-  --main-bg-color: #ffffff;
-  --main-text: #ffffff;
+  --main-bg-color: #fff;
+  --main-modal-color: #fcfcfc;
 }
 
 body {
@@ -498,6 +498,52 @@ button {
 
 /* Backdrop */
 
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+.modal {
+  width: 408px;
+  max-width: 408px;
+  height: 576px;
+  min-height: 576px;
+  padding: 24px 24px;
+  background-color: var(--main-modal-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-close {
+  display: block;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  color: #000;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--pressed-state);
+  border-color: var(--pressed-state);
+  color: var(--main-bg-color);
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
 /* Portfolio */
 .gallery {
   padding: 96px 0 120px;
@@ -613,4 +659,10 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
