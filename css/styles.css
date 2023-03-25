@@ -523,7 +523,7 @@ button {
   transform: translate(-50%, -50%);
 }
 .modal-close {
-  display: block;
+  display: flex;
   margin-left: auto;
   width: 24px;
   height: 24px;
